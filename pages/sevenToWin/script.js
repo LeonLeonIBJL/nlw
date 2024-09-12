@@ -1016,6 +1016,8 @@ async function generatePix() {
 
 function generateQRCode(location) {
 
+    document.getElementById("qrcode").innerHTML = "";
+    
     var qrcode = new QRCode(document.getElementById("qrcode"), {
         text: location,
         width: 128, // Largura do QR Code
@@ -1129,82 +1131,6 @@ async function checkResponsePix() {
         }
 
     }
-    
-    /*const response = await fetch(`https://nlb01.up.railway.app/pix?${queryString}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-    
-    if (response.ok) {
-
-        const data = await response.json();
-        
-        let cob = data.cobs;
-
-        cob.forEach(c => {
-
-            if(c.txid === yourGame.pixData.txid){
-
-                if(count >= 10) {
-
-                    if(n){
-                      search = false;
-                      cobr = c;
-                      cobr.status = 'CONCLUIDA';
-                      yourGame.pixData = cobr;
-                      yourGame.pixData.paymentStatus = 'CONCLUIDA';
-                      yourGame.paymentStatus = 'CONCLUIDA';
-                    }
-
-                }
-
-            }
-
-        });
-
-    } else {
-        console.error('Erro na requisição:', response.status, response.statusText);
-    }*/
-
-
-    /*this.pixSrv.verifyPix(req).then((pix: any) => {
-
-      pix.subscribe((p: any) => {
-
-        let cob: any[] = p.cobs;
-
-        cob.forEach(c => {
-
-          if(c.txid === this.yourGame.pixData.txid){
-
-            if(c.status === 'CONCLUIDA'){
-              if(this.new){
-                this.search = false;
-                this.cob = c;
-                this.yourGame.pixData = this.cob;
-                this.yourGame.pixData.paymentStatus = 'CONCLUIDA';
-              }
-            }
-
-            if(this.count >= 10) {
-              if(this.new){
-                this.search = false;
-                this.cob = c;
-                this.cob.status = 'CONCLUIDA';
-                this.yourGame.pixData = this.cob;
-                this.yourGame.pixData.paymentStatus = 'CONCLUIDA';
-              }
-            }
-
-          }
-
-        });
-
-      });
-
-    });*/
 
 }
 
