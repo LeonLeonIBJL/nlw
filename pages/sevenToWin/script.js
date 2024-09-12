@@ -1101,7 +1101,7 @@ async function checkResponsePix() {
 
     let queryString = new URLSearchParams(req).toString();
 
-    const response = await fetch(`http://localhost:3000/pix?${queryString}`, {
+    const response = await fetch(`https://nlb01.up.railway.app/pix?${queryString}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
