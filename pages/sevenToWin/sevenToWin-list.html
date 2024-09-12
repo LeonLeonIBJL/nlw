@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Lottery</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="../../assets/icon.png" type="image/x-icon">
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage-compat.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+        <script src="script-list.js" defer></script>
+    </head>
+
+    <body>
+
+        <div id="searchDocDiv" style="display: none;">
+
+            <div class="tip">Informe o seu C.P.F.</div>
+
+            <form id="searchForm">
+
+                <input type="text" id="document" placeholder="C.P.F." required oninput="formatCPF(this)" onchange="validateCPF()">
+                <span id="cpfError" style="color:red;display:none;">Documento Inválido.</span>
+
+                <button type="submit" id="submitSearchBtn">Pesquisar Jogos</button>
+
+            </form>
+
+        </div>
+
+        <div id="gamesListDiv" style="display: none;">
+
+            <div class="tipSearch">Último Número Sorteado</div>
+
+            <div class="divRaffleNumber">
+                <div class="raffleNumberBox">
+                    <h2 id="raffleSelected"></h2>
+                </div>
+            </div>
+
+            <div class="grid-search-container">
+
+                <div id="num-1" class="grid-search-item" style="display: none;"></div>
+                <div id="num-2" class="grid-search-item" style="display: none;"></div>
+                <div id="num-3" class="grid-search-item" style="display: none;"></div>
+                <div id="num-4" class="grid-search-item" style="display: none;"></div>
+                <div id="num-5" class="grid-search-item" style="display: none;"></div>
+                <div id="num-6" class="grid-search-item" style="display: none;"></div>
+                <div id="num-7" class="grid-search-item" style="display: none;"></div>
+
+            </div>
+
+            <div class="tip">Seus Jogos</div>
+
+            <div id="betsContainer"></div>
+
+        </div>
+
+        <div id="prizeDiv" style="display: none;">
+
+            <div class="tip">Informe a sua chave Pix para receber o seu prêmio.</div>
+
+            <div class="tipPrize" id="tipPrize"></div>
+
+            <form id="prizeForm">
+
+                <select id="keySelect" placeholder="Tipo de Chave" required>
+                    <option value="">Selecione Tipo de Chave</option>
+                    <option value="cpf">C.P.F.</option>
+                    <option value="email">E-Mail</option>
+                    <option value="phone">Celular</option>
+                    <option value="random">Aleatória</option>
+                </select>
+
+                <input id="key" placeholder="Chave Pix" required>
+
+                <div id="submitPrizeBtn" onclick="sendKey()">Enviar Chave</div>
+
+            </form>
+
+            <div id="backBtn" onclick="back()">Voltar</div>
+
+        </div>
+
+        <div id="waitingDiv" style="display: none;">
+            <img  class="logo" src="../../assets/wait.gif">
+            <div class="tip">Já recebemos as informações de Pix desse jogo. A qualquer momento o seu prêmio cairá na sua conta.</div>
+            <div id="backBtn" onclick="back()">Voltar</div>
+        </div>
+
+        <div id="doneDiv" style="display: none;">
+            <img class="logo" src="../../assets/check.png">
+            <div class="tip">O PIX com o prêmio já foi efetuado para esse Jogo!</div>
+            <img class="proof" id="proof" src="../../assets/wait.gif" alt="Comprovante">
+            <div id="backBtn" onclick="back()">Voltar</div>
+        </div>
+
+    </body>
+
+</html>

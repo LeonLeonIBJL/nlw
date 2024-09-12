@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+    background-color: #222;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.grid-item {
+    background-color: #665f5f;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #cecccc;
+}
+
+.grid-item.tipExp {
+    grid-column: span 5;
+    background-color: #4d4d4d11;
+    color: #ffffff;
+    border: 2px solid #d1caca2c;
+}
+
+.grid-item.large {
+    grid-column: span 3;
+    background-color: #547c08;
+    color: #ffffff;
+}
+
+.grid-item.medium {
+    grid-column: span 2;
+    background-color: #e2c166;
+    color: #000000;
+}
+
+.grid-item.selected {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.tip {
+    font-size: 12px;
+    font-family: 'Outfit';
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.listConfirmation {
+    text-align: center;
+    font-family: 'Outfit';
+    font-size: 20px;
+    background-color: #4D4D4D;
+    color: #ffffff;
+    margin-top: 5%;
+    padding: 10px;
+    letter-spacing: 2px;
+}
+
+.backToList {
+    color: #fdf8f8;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: 'Outfit';
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid #80000075;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #9100005b;
+    cursor: pointer;
+}
+
+.registerBtn {
+    background-color: #547c08;color: #fdf8f8;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: 'Outfit';
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid #ffffff75;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Centraliza os itens do formulário */
+}
+
+form input {
+    padding: 10px;
+    font-size: 1em;
+    font-family: 'Outfit';
+    letter-spacing: 2px;
+    width: 100%;
+    max-width: 300px;
+}
+
+form select {
+    padding: 10px;
+    font-size: 1em;
+    font-family: 'Outfit';
+    letter-spacing: 2px;
+    width: 100%;
+    max-width: 324px;
+}
+
+form button {
+    padding: 10px;
+    font-size: 1em;
+    font-family: 'Outfit';
+    letter-spacing: 2px;
+    width: 100%;
+    max-width: 324px;
+}
+
+#submitBtn {
+    background-color: #0ea15d;
+    color: white;
+    border: none;
+    cursor: not-allowed;
+}
+
+#submitBtn:enabled {
+    cursor: pointer;
+}
+
+.tipPix {
+    text-align: center;
+    font-family: 'Outfit';
+    font-size: 12px;
+    color: #ffffff;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+    letter-spacing: 2px;
+}
+
+#qrcode {
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.pixCode {
+    border: 2px dashed #a19c9c;
+    border-radius: 11px;
+    text-align: center;
+    font-family: 'Outfit';
+    font-size: 10px;
+    color: #ffffff;
+    margin-top: 5%;
+    padding: 10px;
+    letter-spacing: 2px;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttonCopy {
+    background: linear-gradient(67deg, rgb(107, 107, 107) 47%, rgb(39, 41, 36) 87%);
+    margin-top: 5%;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    max-width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttonCopy span {
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-family: 'Outfit';
+    text-align: center;
+}
+
+.logo {
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#submitSearchBtn {
+    background-color: #0ea15d;
+    color: white;
+    border: none;
+    cursor: not-allowed;
+    min-width: 324px;
+}
+
+#submitSearchBtn:enabled {
+    cursor: pointer;
+}
+
+
+
+.tipSearch {
+    font-size: 12px;
+    font-family: 'Outfit';
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20%;
+}
+
+.divRaffleNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+}
+
+.raffleNumberBox {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    background: #ffffff;
+    border-radius: 20px;
+    filter: drop-shadow(0 15px 50px #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.raffleNumberBox:nth-child(1) {
+    filter: drop-shadow(0 15px 50px #000000) hue-rotate(225deg)
+}
+
+.raffleNumberBox::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 8px solid #25252b;
+    border-radius: 15px;
+    background: #2d2d39;
+}
+
+.raffleNumberBox h2 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    font-size: 150px;
+    color: #ffffff;
+}
+
+
+
+.grid-search-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.grid-search-item {
+    background-color: #665f5f;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #cecccc;
+}
+
+
+
+#betsContainer {
+    margin-top: 1%;
+    max-height: 50vh; /* Ajuste a altura máxima conforme necessário */
+    overflow-y: auto; /* Permite a rolagem vertical */
+    padding-right: 5px;
+}
+
+.gameContainer {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    min-width: 324px;
+}
+
+.game {
+    border: 2px solid #c0bfbf62;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px;
+    background-color: #25252b;
+}
+
+.game h1 {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-family: 'Outfit', sans-serif;
+    color: #868585;
+}
+
+.game h2 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    color: #ffffff;
+}
+
+.game p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: 'Outfit', sans-serif;
+    color: #fafafa;
+}
+
+.prize {
+    background-color: #2da010;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.prize div {
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.trophy-icon {
+    font-size: 20px;
+    color: #ffd700; /* Cor dourada para o ícone do troféu */
+}
+
+.tipPrize {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-family: 'Outfit';
+    color: #ffffff;
+}
+
+#submitPrizeBtn {
+    background-color: #0ea15d;
+    color: white;
+    border: none;
+    min-width: 305px;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 2px;
+}
+
+#submitPrizeBtn:enabled {
+    cursor: pointer;
+}
+
+#backBtn {
+    background-color: #c70909;
+    color: white;
+    border: none;
+    min-width: 100px;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 2px;
+    margin-top: 10%;
+}
+
+.proof {
+    margin-top: 10%;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
