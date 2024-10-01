@@ -156,6 +156,46 @@ function listGames() {
                             document.getElementById('num-7').style.display = 'block';
                         }
 
+                        if(change.doc.get('raffles')[7] !== undefined){
+                            document.getElementById('num-8').textContent = change.doc.get('raffles')[7];
+                            document.getElementById('num-8').style.display = 'block';
+                        }
+
+                        if(change.doc.get('raffles')[8] !== undefined){
+                            document.getElementById('num-9').textContent = change.doc.get('raffles')[8];
+                            document.getElementById('num-9').style.display = 'block';
+                        }
+
+                        if(change.doc.get('raffles')[9] !== undefined){
+                            document.getElementById('num-10').textContent = change.doc.get('raffles')[9];
+                            document.getElementById('num-10').style.display = 'block';
+                        }
+
+                        if(change.doc.get('raffles')[10] !== undefined){
+                            document.getElementById('num-11').textContent = change.doc.get('raffles')[10];
+                            document.getElementById('num-11').style.display = 'block';
+                        }
+
+                        if(change.doc.get('raffles')[11] !== undefined){
+                            document.getElementById('num-12').textContent = change.doc.get('raffles')[11];
+                            document.getElementById('num-12').style.display = 'block';
+                        }
+
+                        if(change.doc.get('raffles')[12] !== undefined){
+                            document.getElementById('num-13').textContent = change.doc.get('raffles')[12];
+                            document.getElementById('num-13').style.display = 'block';
+                        }
+
+                        if(change.doc.get('raffles')[13] !== undefined){
+                            document.getElementById('num-14').textContent = change.doc.get('raffles')[13];
+                            document.getElementById('num-14').style.display = 'block';
+                        }
+
+                        if(change.doc.get('raffles')[14] !== undefined){
+                            document.getElementById('num-15').textContent = change.doc.get('raffles')[14];
+                            document.getElementById('num-15').style.display = 'block';
+                        }
+
                     }
 
                     db.collection('games').doc('sevenToWin').get().then((doc) => {
@@ -174,15 +214,26 @@ function listGames() {
                             const betsContainer = document.getElementById('betsContainer');
                             betsContainer.innerHTML = '';
 
+                            
                             betsData.forEach(b => {
+
+                                b.numbers.sort((a, b) => a - b);
 
                                 let numbers = b.numbers[0] + ' - ' + 
                                               b.numbers[1] + ' - ' + 
                                               b.numbers[2] + ' - ' + 
                                               b.numbers[3] + ' - ' + 
                                               b.numbers[4] + ' - ' + 
-                                              b.numbers[5] + ' - ' + 
-                                              b.numbers[6];
+                                              b.numbers[5] + ' - ' +
+                                              b.numbers[6] + ' - ' +
+                                              b.numbers[7] + ' - ' +
+                                              b.numbers[8] + ' - ' +
+                                              b.numbers[9] + ' - ' +
+                                              b.numbers[10] + ' - ' +
+                                              b.numbers[11] + ' - ' +
+                                              b.numbers[12] + ' - ' +
+                                              b.numbers[13] + ' - ' +
+                                              b.numbers[14];
                         
                                 const gameContainer = document.createElement('div');
                                 gameContainer.classList.add('gameContainer');

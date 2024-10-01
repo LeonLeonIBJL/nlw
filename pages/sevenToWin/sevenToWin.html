@@ -17,9 +17,13 @@
 
         <div id="listNumbers" style="display: none;">
 
+            <div id="videoContainer" style="display:none;">
+                <iframe id="youtubeVideo" width="280" height="150" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
             <div class="grid-container">
 
-                <div class="grid-item tipExp">Clique Aqui e Entenda o Jogo</div>
+                <div class="grid-item tipExp" id="videoLink">Clique Aqui e Entenda o Jogo</div>
 
                 <div id="num-1" class="grid-item" onclick="changeNumber(1)">1</div>
                 <div id="num-2" class="grid-item" onclick="changeNumber(2)">2</div>
@@ -91,6 +95,8 @@
         <div id="confirmationDiv" style="display: none;">
             <div class="tip">Tem certeza que deseja enviar esses números?</div>
             <div id="listConfirmation" class="listConfirmation"></div>
+            <div id="listConfirmationSec" class="listConfirmation"></div>
+            <div id="listConfirmationThr" class="listConfirmation"></div>
             <div class="backToList" onclick="changeNumbers()"><b>Quero Trocar os Números</b></div>
             <div class="registerBtn" onclick="toRegister()"><b>Seguir para Registro</b></div>
         </div>

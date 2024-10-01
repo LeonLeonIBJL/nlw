@@ -30,6 +30,11 @@ body {
     color: #cecccc;
 }
 
+#videoContainer {
+    margin-top: 55%;
+    margin-bottom: 5%;
+}
+
 .grid-item.tipExp {
     grid-column: span 5;
     background-color: #4d4d4d11;
@@ -241,7 +246,7 @@ form button {
     color: #ffffff;
     text-align: center;
     padding: 15px;
-    margin-top: 20%;
+    margin-top: 30%;
 }
 
 .divRaffleNumber {
@@ -296,14 +301,16 @@ form button {
     max-width: 100%;
     margin: auto;
     margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .grid-search-item {
     background-color: #665f5f;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 12px;
     color: #cecccc;
 }
 
@@ -328,6 +335,8 @@ form button {
     border-top-right-radius: 5px;
     padding: 10px;
     background-color: #25252b;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .game h1 {
@@ -338,7 +347,7 @@ form button {
 }
 
 .game h2 {
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 2px;
     font-weight: bold;
     font-family: 'Outfit', sans-serif;
@@ -361,6 +370,8 @@ form button {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .prize div {

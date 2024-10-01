@@ -753,17 +753,18 @@ function changeNumber(n) {
         selectedNumbers = selectedNumbers.filter(num => num !== n);
         document.getElementById(`num-${n}`).classList.remove('selected');
     }else{
-        if (selectedNumbers.length < 7) {
+
+        if(selectedNumbers.length < 15){
             selectedNumbers.push(n);
             document.getElementById(`num-${n}`).classList.add('selected');
-        } else {
-            showToast('Você já escolheu 7 números!');
+        }else{
+            showToast('Você já escolheu 15 números!');
         }
     }
 
-    if (selectedNumbers.length === 7) {
+    if(selectedNumbers.length === 15){
         document.getElementById('sendBtn').style.display = 'block';
-    } else {
+    }else{
         document.getElementById('sendBtn').style.display = 'none';
     }
 }
@@ -780,11 +781,25 @@ function clearNumbers() {
 }
 
 function sendNumbers() {
-    yourGame.numbers = selectedNumbers;
+
+    yourGame.numbers = selectedNumbers.sort((a, b) => a - b);
+
+    var sl1 = selectedNumbers.slice(0, 5);
+    var sl2 = selectedNumbers.slice(5, 10);
+    var sl3 = selectedNumbers.slice(10, 15);
+
     const listConfirmation = document.getElementById('listConfirmation');
-    listConfirmation.innerHTML = selectedNumbers.join(' - ');
+    listConfirmation.innerHTML = sl1.join(' - ');
+
+    const listConfirmationSec = document.getElementById('listConfirmationSec');
+    listConfirmationSec.innerHTML = sl2.join(' - ');
+
+    const listConfirmationThr = document.getElementById('listConfirmationThr');
+    listConfirmationThr.innerHTML = sl3.join(' - ');
+
     document.getElementById('listNumbers').style.display = 'none';
     document.getElementById('confirmationDiv').style.display = 'block';
+
 }
 
 function changeNumbers() {
@@ -965,7 +980,7 @@ async function generatePix() {
     };
 
     const valor = {
-        original: '6.78'
+        original: '10.00'
     };
 
     const req = {
@@ -1042,13 +1057,13 @@ function countdownBreak() {
 
     document.getElementById("countdownBreakView").innerText = minFormat + ":" + segFormat;
 
-    if (min < 5 && search) {
+    if(min < 5 && search){
 
         countdownInterval = setTimeout(countdownBreak, 1000);
         checkResponsePix();
         count++;
 
-    } else {
+    }else{
 
         clearTimeout(countdownInterval);
 
@@ -1058,14 +1073,14 @@ function countdownBreak() {
             document.getElementById('paymentDiv').style.display = 'none';
             document.getElementById('registerDiv').style.display = 'block';
 
-        } else {
+        }else{
 
             document.getElementById('paymentDiv').style.display = 'none';
             document.getElementById('waitingDiv').style.display = 'block';
 
             setTimeout(() => {
 
-                if (yourGame.pixData.paymentStatus === 'CONCLUIDA') {
+                if(yourGame.pixData.paymentStatus === 'CONCLUIDA'){
                     generateGameId();
                 }
 
@@ -1166,7 +1181,7 @@ function generateGameId() {
         name: completeName
     };
   
-    let price = 6.78;
+    let price = 10;
     console.log("Preço: R$" + price);
     
     let tax = price * 0.0119;
@@ -1291,4 +1306,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+});
+
+document.getElementById('videoLink').addEventListener('click', function() {
+    var videoContainer = document.getElementById('videoContainer');
+    var youtubeVideo = document.getElementById('youtubeVideo');
+    
+    // Defina o link do vídeo que você deseja exibir
+    youtubeVideo.src = "https://www.youtube.com/embed/wYo_F_BVdAg";
+    
+    // Exiba o vídeo
+    videoContainer.style.display = 'block';
 });
