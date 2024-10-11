@@ -952,7 +952,8 @@ userForm.addEventListener('submit', async (e) => {
             document: formAux.elements['document'].value,
             email: formAux.elements['email'].value,
             state: formAux.elements['stateSelect'].value,
-            city: formAux.elements['citySelect'].value
+            city: formAux.elements['citySelect'].value,
+            accessCode: formAux.elements['accessCode'].value
         };
 
         yourGame.register = reg;
@@ -1182,19 +1183,10 @@ function generateGameId() {
     };
   
     let price = 10;
-    console.log("Preço: R$" + price);
-    
     let tax = price * 0.0119;
-    console.log("Taxa Pix: R$" + tax);
-
     let prim = price - tax;
-    console.log("Saldo Primário: R$" + prim);
-    
     let exise = prim * 0.275;
-    console.log("Imposto: R$" + exise);
-
     let sec = prim - exise
-    console.log("Saldo Secundário: R$" + sec);
   
     let v = {
         date: new Date,
@@ -1309,12 +1301,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById('videoLink').addEventListener('click', function() {
+
     var videoContainer = document.getElementById('videoContainer');
     var youtubeVideo = document.getElementById('youtubeVideo');
     
-    // Defina o link do vídeo que você deseja exibir
     youtubeVideo.src = "https://www.youtube.com/embed/wYo_F_BVdAg";
     
-    // Exiba o vídeo
     videoContainer.style.display = 'block';
+
 });
